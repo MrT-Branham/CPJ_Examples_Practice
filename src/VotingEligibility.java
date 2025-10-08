@@ -9,11 +9,16 @@ public class VotingEligibility {
         int age = input.nextInt();
 
         // Check eligibility
+        // Method 1: if/else Block
         if (age >= 18) {
             System.out.println("You are eligible to vote!");
         } else {
             System.out.println("You are not yet eligible to vote.");
         }
+
+        // Method 2: Conditional Operator
+        System.out.println(age >= 18 ? "You are eligible to vote!":
+                "You are not yet eligible to vote.");
 
         input.close();
     }
