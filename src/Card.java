@@ -36,8 +36,7 @@ public class Card
         }
         else
         {
-            System.out.println("Unknown card value!");
-            System.exit(0);
+            return "Unknown card value!";
         }
 
         String suitAsString = "";
@@ -59,8 +58,7 @@ public class Card
         }
         else
         {
-            System.out.println("Unknown suit!");
-            System.exit(0);
+            return("Unknown suit!");
         }
 
         return valueAsString + " of " + suitAsString;
