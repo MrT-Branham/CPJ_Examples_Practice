@@ -4,6 +4,7 @@ public class DataProcessor {
         try {
             for (int i = 0; i < data.length(); i++) {
                 char ch = data.charAt(i);
+                if(i == data.length() - 1 && ch == ',') throw new NumberFormatException("Must end with a number.");
                 switch (ch) {
                     case '0':
                     case '1':
@@ -31,6 +32,6 @@ public class DataProcessor {
             return false;
         }
         // Test that the last character is not a comma
-        return data.charAt(data.length() - 1) != ',';
+        return true;
     }
 }
