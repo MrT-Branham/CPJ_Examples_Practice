@@ -1,5 +1,3 @@
-import java.util.zip.DataFormatException;
-
 public class DataProcessor {
 
     public static boolean isValidData (String data) {
@@ -18,18 +16,18 @@ public class DataProcessor {
                     case '8':
                     case '9':
                         // Must be even index
-                        if(i % 2 == 1) throw new DataFormatException();
+                        if(i % 2 == 1) throw new NumberFormatException("Only numbers at even indices.");
                         break;
                     case ',':
                         // Must be odd index
-                        if(i % 2 == 0) throw new DataFormatException();
+                        if(i % 2 == 0) throw new NumberFormatException("Only commas at odd indices.");
                         break;
-                    default: throw new DataFormatException();
+                    default: throw new NumberFormatException("Invalid character.");
                 }
             }
         }
-        catch(DataFormatException e){
-            System.out.println("Invalid Data");
+        catch(NumberFormatException e){
+            System.out.println(e.getMessage());
             return false;
         }
         // Test that the last character is not a comma
