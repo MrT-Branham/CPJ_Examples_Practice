@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
-class UCEligibiiltyCheckerTest {
+class UCEligibilityCheckerTest {
 
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
     private final PrintStream originalSystemOut = System.out;
@@ -39,7 +39,7 @@ class UCEligibiiltyCheckerTest {
         System.setIn(simulatedInput);
 
         // Call the method that uses the Scanner
-        UCEligibiiltyChecker.askAdmissionsQuestions();
+        UCEligibilityChecker.askAdmissionsQuestions();
 
         String methodExpected = "\n--- UC Eligibility Results ---\n" +
                 "GPA: 3.50\n" +
@@ -48,7 +48,7 @@ class UCEligibiiltyCheckerTest {
                 "Final Verdict: Eligible for UC admission\n";
         String overallExpected = "Enter your A-G GPA (unweighted): Have you completed all A-G courses? (true/false): " + methodExpected;
 
-        assertEquals(methodExpected, UCEligibiiltyChecker.checkEligibility(3.5, true));
+        assertEquals(methodExpected, UCEligibilityChecker.checkEligibility(3.5, true));
         assertEquals(overallExpected, outputStreamCaptor.toString());
     }
 
@@ -63,7 +63,7 @@ class UCEligibiiltyCheckerTest {
         System.setIn(simulatedInput);
 
         // Call the method that uses the Scanner
-        UCEligibiiltyChecker.askAdmissionsQuestions();
+        UCEligibilityChecker.askAdmissionsQuestions();
 
         String methodExpected = "\n--- UC Eligibility Results ---\n" +
                 "GPA: 2.10\n" +
@@ -72,7 +72,7 @@ class UCEligibiiltyCheckerTest {
                 "Final Verdict: NOT eligible for UC admission\n";
         String overallExpected = "Enter your A-G GPA (unweighted): Have you completed all A-G courses? (true/false): " + methodExpected;
 
-        assertEquals(methodExpected, UCEligibiiltyChecker.checkEligibility(2.1, true));
+        assertEquals(methodExpected, UCEligibilityChecker.checkEligibility(2.1, true));
         assertEquals(overallExpected, outputStreamCaptor.toString());
     }
 
@@ -87,7 +87,7 @@ class UCEligibiiltyCheckerTest {
         System.setIn(simulatedInput);
 
         // Call the method that uses the Scanner
-        UCEligibiiltyChecker.askAdmissionsQuestions();
+        UCEligibilityChecker.askAdmissionsQuestions();
 
         String methodExpected = "\n--- UC Eligibility Results ---\n" +
                 "GPA: 3.90\n" +
@@ -96,7 +96,7 @@ class UCEligibiiltyCheckerTest {
                 "Final Verdict: NOT eligible for UC admission\n";
         String overallExpected = "Enter your A-G GPA (unweighted): Have you completed all A-G courses? (true/false): " + methodExpected;
 
-        assertEquals(methodExpected, UCEligibiiltyChecker.checkEligibility(3.9, false));
+        assertEquals(methodExpected, UCEligibilityChecker.checkEligibility(3.9, false));
         assertEquals(overallExpected, outputStreamCaptor.toString());
     }
     @Test
@@ -110,7 +110,7 @@ class UCEligibiiltyCheckerTest {
         System.setIn(simulatedInput);
 
         // Call the method that uses the Scanner
-        UCEligibiiltyChecker.askAdmissionsQuestions();
+        UCEligibilityChecker.askAdmissionsQuestions();
 
         String overallExpected = "Enter your A-G GPA (unweighted): Have you completed all A-G courses? (true/false): GPA must be between 0 and 4.\n" +
                 "Reenter with correct value.\n" +
@@ -127,7 +127,7 @@ class UCEligibiiltyCheckerTest {
     @DisplayName("Throws IllegalArgumentException - GPA Out of Range")
     void testThrows() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            UCEligibiiltyChecker.checkEligibility(4.1, true);
+            UCEligibilityChecker.checkEligibility(4.1, true);
         });
 
         String expectedMessage = "GPA must be between 0 and 4.";

@@ -2,7 +2,7 @@ import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class UCEligibiiltyChecker {
+public class UCEligibilityChecker {
 
     // Basic UC requirements (simplified for a classroom program)
     // GPA requirement: 3.0 or higher
