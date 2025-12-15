@@ -21,8 +21,18 @@ public class ProjectileFlight
         double v = veloc;
         int seconds = 0;
 
-        // TODO: Complete this method.
-
-
+        while (s >= 0)
+        {
+            int i = 1;
+            while (i <= 100)
+            {
+                s = s + v * DELTA_T;
+                v = v - G * DELTA_T;
+                i++;
+            }
+            seconds++;
+            double pos = -1 / 2.0 * G * seconds * seconds + veloc * seconds;
+            System.out.printf(" %d      %.2f     %.2f \n", seconds, s, pos);
+        }
     }
 }

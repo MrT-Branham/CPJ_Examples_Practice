@@ -7,12 +7,29 @@ public class Time
     String time;
 
     public Time(int hour, int minute){
-        // TODO: Write this constructor.
+        this.hour = hour;
+        this.minute = minute;
+        this.time = hour + ":" + minute;
+        if(minute == 0){
+            this.time = this.time + "0";
+        }
     }
 
-    public int compareTo(Time other){
-        // TODO: Write this method.
-        return -1;
+    public int compareTo(Time other) {
+        //Psuedocode implementation
+        if (this.hour < other.hour) {
+            return -1;
+        } else if (this.hour == other.hour) {
+            if (this.minute < other.minute) {
+                return -1;
+            } else if (this.minute == other.minute) {
+                return 0;
+            } else {
+                return 1;
+            }
+        } else {
+            return 1;
+        }
     }
 
     public static void main(String[] args)
