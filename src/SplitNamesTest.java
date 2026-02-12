@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +13,7 @@ class SplitNamesTest {
     @DisplayName("Split Boy Names")
     void testSplitBabyNames1 () {
         try{
+            SplitNames.splitBabyNames("babynames.txt");
             Path actual = Paths.get("boynames.txt");
             Path expected = Paths.get("boynamessol.txt");
             long mismatch = Files.mismatch(actual, expected);
@@ -35,6 +35,7 @@ class SplitNamesTest {
     @DisplayName("Split Girl Names")
     void testSplitBabyNames2 () {
         try{
+            SplitNames.splitBabyNames("babynames.txt");
             Path actual = Paths.get("girlnames.txt");
             Path expected = Paths.get("girlnamessol.txt");
             long mismatch = Files.mismatch(actual, expected);
