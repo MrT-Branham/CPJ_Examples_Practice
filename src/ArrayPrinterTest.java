@@ -27,7 +27,7 @@ public class ArrayPrinterTest {
     @Test
     void testGenerateRandomIntegerArray_Length() {
         int[] result = ArrayPrinter.generateRandomIntegerArray(5);
-        assertEquals(10, result.length);
+        assertEquals(5, result.length);
     }
 
     @Test
