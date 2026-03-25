@@ -6,7 +6,7 @@ public class BinaryRecursion
 
         // The recursive method takes the initial min
         // and max indices as parameters
-        int index1 = binaryRec(arr1, 8, 0, arr1.length - 1);
+        int index1 = binaryRec(arr1, 1, 0, arr1.length - 1);
         // int index2 = binaryRec(arr1, 30, 0, arr1.length - 1);
         // int index3 = binaryRec(arr1, 40, 0, arr1.length - 1);
     }
