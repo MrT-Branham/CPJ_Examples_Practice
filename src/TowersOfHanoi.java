@@ -32,9 +32,16 @@ public class TowersOfHanoi
          int other = 3 - from - to;
          move(disks - 1, from, other);      
          towers[to].add(towers[from].remove());
-         System.out.println(Arrays.toString(towers));
+         printTowers();
          move(disks - 1, other, to);
       }
+   }
+
+    /**
+     * Prints the current towers array.
+     */
+   public void printTowers(){
+      System.out.println(Arrays.toString(towers));
    }
 }
 
